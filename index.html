@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fine Grill Municipium — Tradicija i okusi zavičaja u Rijeci</title>
+<meta name="description" content="Fine Grill Municipium — grill na drveni ugljen, autentični okusi i nezaboravne proslave u srcu Rijeke. Rezervirajte stol u luksuznoj atmosferi." />
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant" />
+<meta property="og:title" content="Fine Grill Municipium — Rijeka" />
+<meta property="og:description" content="Grill na drveni ugljen, domaći okusi i proslave u srcu Rijeke. Rezervirajte stol." />
+<meta property="og:image" content="https://finegrillmunicipium.com/assets/img/hero.png" />
+<meta property="og:url" content="https://finegrillmunicipium.com" />
+<meta property="og:site_name" content="Fine Grill Municipium" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Fine Grill Municipium — Rijeka" />
+<meta name="twitter:description" content="Grill na drveni ugljen, domaći okusi i proslave u srcu Rijeke." />
+<meta name="twitter:image" content="https://finegrillmunicipium.com/assets/img/hero.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========== DESIGN TOKENS ========== */
+:root{
+  --bg-primary:#0f0d0a;
+  --bg-secondary:#171410;
+  --bg-card:#1e1b16;
+  --bg-elevated:#252019;
+  --accent-gold:#c9a96e;
+  --accent-gold-light:#e8c990;
+  --accent-gold-deep:#a88a52;
+  --text-primary:#f5f0e8;
+  --text-secondary:#9a917f;
+  --text-muted:#6a6457;
+  --border:rgba(201,169,110,0.14);
+  --border-strong:rgba(201,169,110,0.28);
+  --shadow-luxe:0 30px 80px -20px rgba(0,0,0,.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  background:var(--bg-primary);
+  color:var(--text-primary);
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  font-size:1rem;
+  line-height:1.8;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none;transition:color .3s ease}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--accent-gold);color:var(--bg-primary)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#110e0b}
+::-webkit-scrollbar-thumb{background:var(--accent-gold-deep)}
+
+.container{max-width:1320px;margin:0 auto;padding:0 48px}
+.container-narrow{max-width:1100px;margin:0 auto;padding:0 48px}
+.overline{
+  font-family:'DM Sans',sans-serif;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent-gold);
+  display:inline-flex;align-items:center;gap:14px;
+}
+.overline::before{content:"";width:32px;height:1px;background:var(--accent-gold);opacity:.7}
+.overline.center{justify-content:center}
+.overline.center::before{display:none}
+.overline.center::after{content:"";width:40px;height:1px;background:var(--accent-gold);opacity:.7;margin-left:14px}
+.overline.center{display:inline-flex}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(2.8rem,5.5vw,4.8rem);
+  line-height:1.02;
+  letter-spacing:-.015em;
+  color:var(--text-primary);
+  margin-top:1.4rem;
+}
+.section-title em{font-style:italic;color:var(--accent-gold-light);font-weight:400}
+.gold-line{
+  width:60px;height:1px;background:var(--accent-gold);
+  display:block;margin:2rem 0;
+}
+.gold-line.center{margin:2rem auto}
+section{padding:140px 0;position:relative}
+
+/* ========== SCROLL REVEAL ========== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.delay-1{transition-delay:.12s}
+.reveal.delay-2{transition-delay:.24s}
+.reveal.delay-3{transition-delay:.36s}
+
+/* ========== NAVBAR ========== */
+.navbar{
+  position:fixed;top:0;left:0;right:0;height:88px;z-index:100;
+  display:flex;align-items:center;
+  transition:transform .5s ease,background .5s ease,border-color .5s ease,backdrop-filter .5s ease,height .4s ease;
+  background:linear-gradient(to bottom,rgba(10,9,7,.5),transparent);
+  border-bottom:1px solid transparent;
+}
+.navbar.scrolled{
+  background:rgba(10,9,7,.85);
+  backdrop-filter:blur(24px) saturate(140%);
+  -webkit-backdrop-filter:blur(24px) saturate(140%);
+  border-bottom:1px solid var(--border);
+  height:72px;
+}
+.navbar.hidden{transform:translateY(-100%)}
+.nav-inner{width:100%;max-width:1320px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;font-size:1.5rem;letter-spacing:.32em;
+  color:var(--text-primary);
+}
+.logo span{color:var(--accent-gold)}
+.nav-links{display:flex;align-items:center;gap:2.6rem;list-style:none}
+.nav-links a{
+  font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-primary);font-weight:400;position:relative;padding:6px 0;
+}
+.nav-links a:not(.nav-cta)::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--accent-gold);transform:scaleX(0);transform-origin:right;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.nav-links a:not(.nav-cta):hover{color:var(--accent-gold)}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{
+  border:1px solid var(--accent-gold);color:var(--accent-gold);
+  padding:11px 24px;border-radius:999px;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  transition:background .4s ease,color .4s ease,box-shadow .4s ease;
+}
+.nav-cta:hover{background:var(--accent-gold);color:var(--bg-primary);box-shadow:0 12px 30px -10px rgba(201,169,110,.5)}
+.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:10px;z-index:101;position:relative}
+.hamburger span{width:26px;height:1.5px;background:var(--accent-gold);transition:.4s}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;background:rgba(10,9,7,.98);
+  backdrop-filter:blur(28px);z-index:99;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2.2rem;opacity:0;pointer-events:none;transition:opacity .5s ease;
+}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{
+  font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;
+  color:var(--text-primary);opacity:0;transform:translateY(24px);
+  transition:opacity .6s ease,transform .6s ease,color .3s ease;
+  letter-spacing:.02em;
+}
+.mobile-menu.open a{opacity:1;transform:translateY(0)}
+.mobile-menu.open a:nth-child(1){transition-delay:.15s}
+.mobile-menu.open a:nth-child(2){transition-delay:.22s}
+.mobile-menu.open a:nth-child(3){transition-delay:.29s}
+.mobile-menu.open a:nth-child(4){transition-delay:.36s}
+.mobile-menu.open a:nth-child(5){transition-delay:.43s}
+.mobile-menu.open a:nth-child(6){transition-delay:.5s}
+.mobile-menu a:hover{color:var(--accent-gold)}
+.mobile-menu a.mm-cta{
+  margin-top:1rem;border:1px solid var(--accent-gold);color:var(--accent-gold);
+  padding:14px 36px;border-radius:999px;font-size:.85rem;
+  letter-spacing:.2em;text-transform:uppercase;font-family:'DM Sans',sans-serif;
+}
+
+/* ========== HERO ========== */
+.hero{
+  min-height:100vh;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;padding:140px 24px 100px;
+  background:var(--bg-primary);
+}
+.hero-bg{
+  position:absolute;inset:-8% -2% -2%;z-index:0;
+  background-image:url('https://finegrillmunicipium.com/assets/img/hero.png');
+  background-size:cover;background-position:center;
+  will-change:transform;
+  animation:kenBurns 18s ease-in-out infinite alternate;
+}
+.hero-bg::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,rgba(15,13,10,.65) 0%,rgba(15,13,10,.3) 35%,rgba(15,13,10,.55) 70%,rgba(15,13,10,.97) 100%),
+    radial-gradient(ellipse at center,transparent 30%,rgba(15,13,10,.6) 100%),
+    radial-gradient(ellipse at 30% 60%,rgba(180,100,20,.08),transparent 60%);
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+@keyframes kenBurns{
+  0%{transform:scale(1) translate(0,0)}
+  100%{transform:scale(1.12) translate(-1%,-1%)}
+}
+.hero-content{position:relative;z-index:2;max-width:1100px;width:100%}
+.hero-mark{
+  display:inline-flex;align-items:center;gap:18px;
+  font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--accent-gold);opacity:0;animation:fadeIn 1s .3s both;
+}
+.hero-mark::before,.hero-mark::after{content:"";width:36px;height:1px;background:var(--accent-gold);opacity:.6}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(3.4rem,9.2vw,8.4rem);line-height:.96;letter-spacing:-.025em;
+  color:var(--text-primary);margin-top:2rem;
+  opacity:0;animation:slideUp 1.2s .6s both;
+}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--accent-gold-light);display:block}
+.hero h1 .amp{
+  display:inline-block;font-style:italic;font-weight:300;
+  color:var(--accent-gold);font-size:.7em;vertical-align:middle;
+  margin:0 .15em;opacity:.85;
+}
+.hero .gold-line{margin:2.6rem auto;width:80px;transform-origin:center;animation:expandLine .9s 1.1s both}
+.hero .sub{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:clamp(1.2rem,2.2vw,1.7rem);color:var(--accent-gold-light);
+  max-width:640px;margin:0 auto;line-height:1.5;
+  opacity:0;animation:fadeIn 1s 1.3s both;
+}
+.hero-ctas{display:flex;gap:1.5rem;justify-content:center;margin-top:3rem;flex-wrap:wrap;opacity:0;animation:fadeIn 1s 1.6s both}
+.btn{
+  padding:18px 42px;font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.18em;font-weight:500;border-radius:2px;
+  transition:all .4s cubic-bezier(.2,.7,.2,1);display:inline-block;cursor:pointer;font-family:'DM Sans',sans-serif;
+  position:relative;overflow:hidden;
+}
+.btn-primary{background:var(--accent-gold);color:var(--bg-primary);box-shadow:0 14px 36px -12px rgba(201,169,110,.4)}
+.btn-primary:hover{background:var(--accent-gold-light);transform:translateY(-3px);box-shadow:0 20px 44px -10px rgba(201,169,110,.55)}
+.btn-outline{border:1px solid var(--accent-gold);color:var(--accent-gold);background:transparent}
+.btn-outline:hover{background:var(--accent-gold);color:var(--bg-primary);transform:translateY(-3px)}
+.scroll-indicator{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:14px;z-index:2;
+  font-size:.62rem;letter-spacing:.32em;color:var(--text-secondary);text-transform:uppercase;
+  opacity:0;animation:fadeIn 1s 2s both;
+}
+.scroll-indicator::after{
+  content:"";width:1px;height:50px;background:var(--accent-gold);
+  animation:scrollLine 2.4s ease-in-out infinite;transform-origin:top;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes expandLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes scrollLine{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}50.01%{transform-origin:bottom}}
+
+/* ========== GOOGLE REVIEWS ========== */
+.reviews{background:var(--bg-secondary);padding:140px 0 160px;position:relative}
+.reviews::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:140px;height:1px;background:linear-gradient(to right,transparent,var(--accent-gold),transparent);
+}
+.reviews-head{text-align:center;margin-bottom:5rem}
+.google-badge{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--bg-card);border:1px solid var(--border-strong);
+  padding:14px 26px;border-radius:999px;margin-bottom:1.6rem;
+}
+.google-badge svg{width:20px;height:20px}
+.google-badge .rating{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--accent-gold-light);font-weight:500;line-height:1}
+.google-badge .rating-stars{color:var(--accent-gold);letter-spacing:.1em;font-size:.95rem}
+.google-badge .rating-meta{font-size:.72rem;color:var(--text-secondary);letter-spacing:.12em;text-transform:uppercase}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.review-card{
+  background:linear-gradient(180deg,var(--bg-card) 0%,var(--bg-elevated) 100%);
+  border:1px solid var(--border);
+  padding:38px 36px 32px;border-radius:4px;
+  position:relative;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .5s ease,box-shadow .5s ease;
+}
+.review-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:var(--shadow-luxe)}
+.review-card::before{
+  content:"\201C";position:absolute;top:14px;right:28px;
+  font-family:'Cormorant Garamond',serif;font-size:5rem;line-height:1;
+  color:var(--accent-gold);opacity:.18;
+}
+.review-stars{color:var(--accent-gold);letter-spacing:.15em;font-size:.95rem;margin-bottom:1.2rem}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.6;color:var(--text-primary);min-height:130px}
+.review-author{display:flex;align-items:center;gap:14px;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--border)}
+.review-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent-gold),var(--accent-gold-deep));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--bg-primary);font-size:1.1rem;
+}
+.review-name{font-size:.92rem;font-weight:400;color:var(--text-primary);letter-spacing:.02em}
+.review-meta{font-size:.72rem;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+
+/* ========== WHY MUNICIPIUM ========== */
+.why{background:var(--bg-primary);position:relative;overflow:hidden}
+.why::before{
+  content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(201,169,110,.06),transparent 70%);pointer-events:none;
+}
+.why-head{text-align:center;margin-bottom:6rem;max-width:760px;margin-left:auto;margin-right:auto}
+.why-head p{color:var(--text-secondary);margin-top:1.5rem;font-size:1.05rem}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.why-card{
+  background:linear-gradient(180deg,var(--bg-card) 0%,rgba(22,20,18,.4) 100%);
+  border:1px solid var(--border);border-radius:4px;
+  padding:48px 36px 42px;text-align:center;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1),border-color .5s ease,background .5s ease;
+  position:relative;overflow:hidden;
+}
+.why-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--accent-gold),transparent);
+  opacity:0;transition:opacity .5s ease;
+}
+.why-card:hover{transform:translateY(-10px);border-color:var(--border-strong)}
+.why-card:hover::before{opacity:1}
+.why-icon{
+  width:64px;height:64px;margin:0 auto 1.8rem;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--border-strong);border-radius:50%;
+  color:var(--accent-gold);transition:transform .6s cubic-bezier(.2,.7,.2,1),background .5s ease;
+}
+.why-card:hover .why-icon{transform:rotate(10deg) scale(1.08);background:rgba(201,169,110,.08)}
+.why-icon svg{width:28px;height:28px}
+.why-card h3{
+  font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.55rem;
+  color:var(--text-primary);margin-bottom:1rem;letter-spacing:.01em;
+}
+.why-card p{color:var(--text-secondary);font-size:.92rem;line-height:1.75}
+
+/* ========== O NAMA ========== */
+.about{background:var(--bg-secondary)}
+.about-grid{display:grid;grid-template-columns:6fr 4fr;gap:6rem;align-items:start}
+.about-text p{color:var(--text-secondary);margin-top:1.6rem;line-height:1.95;font-size:1.02rem}
+.stats{display:flex;gap:3.5rem;margin-top:4rem;flex-wrap:wrap}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;color:var(--accent-gold);line-height:1}.stat-label{font-size:.72rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.2em;margin-top:.7rem}
+.press-cards{display:flex;flex-direction:column;gap:1.8rem}
+.press-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-left:2px solid var(--accent-gold);padding:32px 36px;border-radius:2px;
+  transition:transform .5s ease,border-color .5s ease;
+}
+.press-card:hover{transform:translateX(6px);border-color:var(--border-strong);border-left-color:var(--accent-gold-light)}
+.press-source{font-size:.7rem;text-transform:uppercase;letter-spacing:.24em;color:var(--accent-gold);font-weight:500}
+.press-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--text-primary);margin:1rem 0 1.2rem;line-height:1.5}
+.press-link{font-size:.8rem;color:var(--accent-gold);letter-spacing:.06em}
+.press-link:hover{color:var(--accent-gold-light)}
+
+/* ========== DISHES (Signature) ========== */
+.dishes{background:var(--bg-primary);padding:140px 0}
+.section-head{margin-bottom:6rem;text-align:center}
+.section-head p{color:var(--text-secondary);max-width:620px;margin:1.4rem auto 0}
+.dishes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.dish-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:3px;overflow:hidden;transition:all .6s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;position:relative;
+}
+.dish-card:hover{border-color:var(--border-strong);transform:translateY(-8px);box-shadow:var(--shadow-luxe)}
+.dish-img-wrap{height:380px;overflow:hidden;position:relative}
+.dish-img{
+  width:100%;height:100%;background-size:cover;background-position:center;
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.dish-img-wrap::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,9,7,.7) 0%,transparent 40%);
+  opacity:.7;transition:opacity .5s ease;
+}
+.dish-card:hover .dish-img{transform:scale(1.08)}
+.dish-card:hover .dish-img-wrap::after{opacity:.9}
+.dish-tag{
+  position:absolute;top:24px;left:24px;z-index:2;
+  background:rgba(10,9,7,.7);backdrop-filter:blur(10px);
+  border:1px solid var(--border-strong);color:var(--accent-gold);
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:7px 14px;border-radius:999px;
+}
+.dish-body{padding:32px 34px 34px;flex:1;display:flex;flex-direction:column}
+.dish-name{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.45rem;color:var(--text-primary);line-height:1.25;letter-spacing:-.005em}
+.dish-desc{color:var(--text-secondary);font-size:.92rem;line-height:1.75;margin:1rem 0 1.6rem;flex:1}
+.dish-foot{display:flex;justify-content:space-between;align-items:center;padding-top:1.2rem;border-top:1px solid var(--border)}
+.dish-price{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.6rem;color:var(--accent-gold)}
+.dish-arrow{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;color:var(--accent-gold);
+  transition:background .4s ease,border-color .4s ease,transform .4s ease;
+}
+.dish-card:hover .dish-arrow{background:var(--accent-gold);color:var(--bg-primary);border-color:var(--accent-gold);transform:translateX(4px)}
+
+/* ========== MENU ========== */
+.menu{background:var(--bg-secondary)}
+.tabs{
+  display:flex;justify-content:center;gap:2.2rem;margin-bottom:4rem;
+  border-bottom:1px solid var(--border);overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{
+  padding:18px 4px;font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--text-secondary);position:relative;white-space:nowrap;
+  transition:color .3s ease;font-weight:400;
+}
+.tab-btn::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1.5px;
+  background:var(--accent-gold);transform:scaleX(0);transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.tab-btn:hover{color:var(--text-primary)}
+.tab-btn.active{color:var(--accent-gold)}
+.tab-btn.active::after{transform:scaleX(1)}
+.tab-panel{display:none;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+.tab-panel.active{display:block}
+.tab-panel.shown{opacity:1;transform:translateY(0)}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 5rem;max-width:1180px;margin:0 auto}
+.menu-item{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;
+  padding:1.6rem .5rem;border-bottom:1px solid rgba(201,169,110,.08);
+  transition:background .4s ease,padding .3s ease;
+}
+.menu-item:hover{background:rgba(201,169,110,.04);padding-left:1rem;padding-right:1rem}
+.mi-left{flex:1}
+.mi-name{font-size:1rem;font-weight:400;color:var(--text-primary);letter-spacing:.005em}
+.mi-desc{font-size:.82rem;font-style:italic;color:var(--text-secondary);margin-top:.4rem;line-height:1.55}
+.mi-price{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.2rem;color:var(--accent-gold);white-space:nowrap}
+
+/* ========== EVENTS ========== */
+.events{background:var(--bg-primary)}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-bottom:4rem}
+.event-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:54px 40px;border-radius:3px;position:relative;overflow:hidden;
+  transition:transform .5s ease,border-color .5s ease;
+}
+.event-card:hover{transform:translateY(-6px);border-color:var(--border-strong)}
+.event-num{
+  position:absolute;top:24px;right:34px;
+  font-family:'Cormorant Garamond',serif;font-size:4.6rem;font-weight:300;font-style:italic;
+  color:rgba(201,169,110,.16);line-height:1;
+}
+.event-card h3{
+  font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.75rem;
+  color:var(--text-primary);margin-bottom:1.4rem;position:relative;line-height:1.2;
+}
+.event-line{width:40px;height:1px;background:var(--accent-gold);margin-bottom:1.4rem}
+.event-card p{color:var(--text-secondary);font-size:.95rem;line-height:1.85}
+.events-cta{
+  background:linear-gradient(135deg,var(--bg-card) 0%,var(--bg-elevated) 100%);
+  border:1px solid var(--border-strong);
+  padding:64px 48px;border-radius:3px;text-align:center;position:relative;overflow:hidden;
+}
+.events-cta::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(201,169,110,.08),transparent 60%);
+  pointer-events:none;
+}
+.events-cta h3{
+  font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.6rem;color:var(--text-primary);
+  position:relative;line-height:1.15;
+}
+.events-cta p{color:var(--text-secondary);margin:1.4rem 0 2.4rem;position:relative;font-size:1.02rem}
+.events-cta .btn{position:relative}
+
+/* ========== GALLERY ========== */
+.gallery{background:var(--bg-secondary)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;grid-auto-rows:280px}
+.gallery-item{
+  overflow:hidden;border-radius:3px;cursor:pointer;position:relative;
+  background:#111;transform:scale(.96);opacity:0;
+  transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.gallery-item.visible{opacity:1;transform:scale(1)}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(10,9,7,.7));
+  opacity:0;transition:opacity .5s ease;
+}
+.gallery-item:hover::after{opacity:1}
+.gallery-zoom{
+  position:absolute;bottom:20px;right:20px;z-index:2;
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(10,9,7,.7);backdrop-filter:blur(10px);
+  border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent-gold);font-size:1.1rem;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .4s ease,transform .4s ease;
+}
+.gallery-item:hover .gallery-zoom{opacity:1;transform:translateY(0)}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:200;
+  display:none;align-items:center;justify-content:center;
+}
+.lightbox.open{display:flex;animation:fadeIn .3s ease}
+.lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-btn{
+  position:absolute;background:rgba(255,255,255,.04);color:var(--accent-gold);
+  font-size:1.6rem;width:54px;height:54px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .3s ease,color .3s ease;
+}
+.lb-btn:hover{background:rgba(201,169,110,.15);color:var(--accent-gold-light)}
+.lb-close{top:30px;right:30px}
+.lb-prev{left:30px;top:50%;transform:translateY(-50%)}
+.lb-next{right:30px;top:50%;transform:translateY(-50%)}
+
+/* ========== CONTACT ========== */
+.contact{background:var(--bg-primary)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:6rem;align-items:start}
+.info-block{margin-bottom:3rem}
+.info-label{
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.24em;
+  color:var(--accent-gold);font-weight:500;margin-bottom:1rem;
+  display:flex;align-items:center;gap:12px;
+}
+.info-label::before{content:"";width:18px;height:1px;background:var(--accent-gold)}
+.info-block p{color:var(--text-primary);font-size:1.02rem;line-height:1.95}
+.socials{display:flex;gap:1.8rem;margin-top:1rem}
+.socials a{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--text-secondary);position:relative;padding-bottom:4px}
+.socials a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent-gold);transform:scaleX(0);transition:transform .4s ease;transform-origin:right}
+.socials a:hover{color:var(--accent-gold)}
+.socials a:hover::after{transform:scaleX(1);transform-origin:left}
+
+form{display:flex;flex-direction:column;gap:1.1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+input,select,textarea{
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:18px 22px;color:var(--text-primary);font-family:'DM Sans',sans-serif;
+  font-size:.92rem;border-radius:2px;width:100%;transition:border-color .4s ease,background .4s ease;
+}
+input::placeholder,textarea::placeholder{color:var(--text-muted)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent-gold);background:var(--bg-elevated)}
+textarea{resize:vertical;min-height:130px;font-family:'DM Sans',sans-serif}
+select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23c9a96e' d='M6 8L0 0h12z'/></svg>");background-repeat:no-repeat;background-position:right 22px center}
+.submit-btn{
+  background:var(--accent-gold);color:var(--bg-primary);
+  padding:20px;text-transform:uppercase;letter-spacing:.2em;
+  font-size:.82rem;font-weight:500;border-radius:2px;
+  transition:background .4s ease,transform .4s ease,box-shadow .4s ease;cursor:pointer;
+  box-shadow:0 14px 30px -12px rgba(201,169,110,.4);
+}
+.submit-btn:hover{background:var(--accent-gold-light);transform:translateY(-2px);box-shadow:0 20px 40px -12px rgba(201,169,110,.5)}
+.map{margin-top:2.4rem;border-radius:3px;overflow:hidden;border:1px solid var(--border)}
+.map iframe{width:100%;height:340px;border:0;display:block;filter:grayscale(100%) contrast(.85) brightness(.8)}
+
+/* ========== NAVBAR HOURS ========== */
+.nav-hours{
+  font-size:.65rem;letter-spacing:.14em;color:var(--text-secondary);
+  text-transform:uppercase;display:flex;align-items:center;gap:6px;
+}
+.nav-hours::before{content:"";width:6px;height:6px;border-radius:50%;background:#4a9e6b;display:inline-block;box-shadow:0 0 6px rgba(74,158,107,.6)}
+
+/* ========== WHATSAPP BUTTON ========== */
+.floating-whatsapp{
+  position:fixed;right:24px;bottom:88px;z-index:80;
+  width:52px;height:52px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px -8px rgba(37,211,102,.6);
+  transition:transform .35s ease,box-shadow .35s ease,opacity .35s ease;
+  opacity:0;pointer-events:none;
+}
+.floating-whatsapp.visible{opacity:1;pointer-events:auto}
+.floating-whatsapp:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 14px 36px -8px rgba(37,211,102,.7)}
+.floating-whatsapp svg{width:26px;height:26px;fill:#fff}
+@media(max-width:768px){
+  .floating-whatsapp{right:24px;bottom:90px}
+}
+
+/* ========== BACK TO TOP ========== */
+.back-to-top{
+  position:fixed;left:24px;bottom:24px;z-index:80;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--bg-card);border:1px solid var(--border-strong);
+  color:var(--accent-gold);font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .35s ease;
+  opacity:0;pointer-events:none;
+}
+.back-to-top.visible{opacity:1;pointer-events:auto}
+.back-to-top:hover{background:var(--accent-gold);color:var(--bg-primary);transform:translateY(-3px)}
+
+/* ========== ACTIVE NAV ========== */
+.nav-links a.nav-active{color:var(--accent-gold)}
+.nav-links a.nav-active::after{transform:scaleX(1)!important;transform-origin:left!important}
+
+/* ========== GDPR BANNER ========== */
+.gdpr{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(15,13,10,.97);backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);
+  padding:18px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+  transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.gdpr.show{transform:translateY(0)}
+.gdpr p{font-size:.8rem;color:var(--text-secondary);line-height:1.6;max-width:680px}
+.gdpr p a{color:var(--accent-gold);text-decoration:underline}
+.gdpr-btns{display:flex;gap:.8rem;flex-shrink:0}
+.gdpr-accept{
+  background:var(--accent-gold);color:var(--bg-primary);
+  padding:10px 22px;border-radius:2px;font-size:.75rem;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;
+  transition:background .3s ease;border:none;font-family:inherit;
+}
+.gdpr-accept:hover{background:var(--accent-gold-light)}
+.gdpr-decline{
+  background:transparent;color:var(--text-secondary);
+  padding:10px 16px;border-radius:2px;font-size:.75rem;
+  letter-spacing:.12em;text-transform:uppercase;cursor:pointer;
+  border:1px solid var(--border);font-family:inherit;
+  transition:border-color .3s ease,color .3s ease;
+}
+.gdpr-decline:hover{border-color:var(--border-strong);color:var(--text-primary)}
+@media(max-width:768px){
+  .gdpr{flex-direction:column;padding:18px 20px;gap:1rem}
+  .gdpr-btns{width:100%}
+  .gdpr-accept,.gdpr-decline{flex:1;text-align:center}
+}
+.floating-reserve{
+  position:fixed;right:24px;bottom:24px;z-index:80;
+  background:var(--accent-gold);color:var(--bg-primary);
+  padding:14px 24px;border-radius:999px;
+  font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;
+  box-shadow:0 18px 44px -14px rgba(201,169,110,.65);
+  transition:transform .35s ease,background .35s ease,box-shadow .35s ease,opacity .35s ease;
+  opacity:0;pointer-events:none;
+}
+.floating-reserve.visible{opacity:1;pointer-events:auto}
+.floating-reserve:hover{background:var(--accent-gold-light);transform:translateY(-3px);box-shadow:0 24px 52px -14px rgba(201,169,110,.8)}
+@media(max-width:768px){
+  .floating-reserve{left:20px;right:20px;bottom:16px;text-align:center;padding:15px 18px}
+}
+
+/* ========== FOOTER ========== */
+footer{background:#0a0806;border-top:1px solid var(--border);padding:80px 0 50px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:4rem;margin-bottom:3.5rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.5rem;letter-spacing:.32em;color:var(--accent-gold)}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent-gold-light);font-size:1.15rem;margin-top:1.4rem}
+footer p,footer a{color:var(--text-secondary);font-size:.88rem;line-height:1.95}
+footer a:hover{color:var(--accent-gold)}
+.footer-col h4{
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.24em;
+  color:var(--accent-gold);font-weight:500;margin-bottom:1.2rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.footer-sep{height:1px;background:var(--border);margin-bottom:1.8rem}
+.copy{text-align:center;font-size:.74rem;color:var(--text-muted);letter-spacing:.08em}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:1100px){
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .dishes-grid{grid-template-columns:repeat(2,1fr)}
+  .events-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:240px}
+  .gallery-item.wide{grid-column:span 1}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:4rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  section{padding:140px 0}
+}
+@media (max-width:768px){
+  section{padding:100px 0}
+  .container,.container-narrow{padding:0 24px}
+  .nav-inner{padding:0 24px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .navbar{height:72px}
+  .hero{padding:110px 20px 80px;min-height:92vh}
+  .hero h1{font-size:3.4rem}
+  .hero .sub{font-size:1.05rem}
+  .hero-ctas{flex-direction:column;gap:1rem;width:100%;max-width:300px;margin-left:auto;margin-right:auto}
+  .btn{width:100%;padding:18px 30px}
+  .dishes-grid,.menu-grid,.footer-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:280px}
+  .gallery-item.tall{grid-row:span 1}
+  .why-grid{grid-template-columns:1fr;gap:1.2rem}
+  .form-row{grid-template-columns:1fr}
+  .tabs{justify-content:flex-start;gap:1.8rem;padding-left:4px;padding-right:4px}
+  .reviews{padding:100px 0}
+  .reviews-head{margin-bottom:3rem}
+  .section-head{margin-bottom:3.5rem}
+  .about-grid,.contact-grid{gap:3rem}
+  .stats{gap:2rem}
+  .stat-num{font-size:2.4rem}
+  .dish-img-wrap{height:280px}
+  .events-cta{padding:48px 28px}
+  .events-cta h3{font-size:2rem}
+  .event-card{padding:42px 30px}
+  .map iframe{height:260px}
+  .lb-close{top:16px;right:16px}
+  .lb-prev{left:10px}
+  .lb-next{right:10px}
+  .lb-btn{width:46px;height:46px;font-size:1.3rem}
+}
+@media (max-width:480px){
+  .hero h1{font-size:2.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .hero-bg{animation:none}
+}
+
+/* ========== STAGGER ANIMACIJE ========== */
+.dish-card,.why-card,.review-card{
+  opacity:0;transform:translateY(48px) scale(.97);
+}
+.dish-card{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),border-color .6s ease,box-shadow .6s ease,translateY .6s ease}
+.why-card{transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1),border-color .5s ease}
+.review-card{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),border-color .5s ease,box-shadow .5s ease}
+.stagger-in{opacity:1!important;transform:translateY(0) scale(1)!important}
+
+/* ========== TYPEWRITER ========== */
+.typewriter-cursor{
+  display:inline-block;width:2px;height:.8em;
+  background:var(--accent-gold);margin-left:4px;
+  vertical-align:middle;
+  animation:twBlink .75s step-end infinite;
+}
+@keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ========== HORIZONTAL SCROLL MENU CARDS ========== */
+.menu-scroll-wrap{position:relative}
+.menu-scroll-hint{
+  text-align:center;font-size:.68rem;letter-spacing:.2em;
+  color:var(--text-muted);text-transform:uppercase;
+  margin-bottom:1.6rem;
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+}
+.menu-scroll-hint::before,.menu-scroll-hint::after{
+  content:"";flex:1;max-width:50px;height:1px;background:var(--border);
+}
+.menu-cards-scroll{
+  display:flex;gap:1.2rem;overflow-x:auto;
+  padding-bottom:1.4rem;scrollbar-width:none;
+  cursor:grab;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+}
+.menu-cards-scroll::-webkit-scrollbar{display:none}
+.menu-cards-scroll:active{cursor:grabbing}
+.menu-scroll-card{
+  flex:0 0 260px;scroll-snap-align:start;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:3px;padding:26px 22px;
+  transition:border-color .4s ease,transform .4s ease;
+  position:relative;overflow:hidden;
+}
+.menu-scroll-card::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--accent-gold),transparent);
+  transform:scaleX(0);transition:transform .4s ease;transform-origin:center;
+}
+.menu-scroll-card:hover{border-color:var(--border-strong);transform:translateY(-5px)}
+.menu-scroll-card:hover::after{transform:scaleX(1)}
+.msc-cat{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-gold);font-weight:500;margin-bottom:.8rem}
+.msc-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--text-primary);line-height:1.25;margin-bottom:.7rem}
+.msc-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1.2rem;min-height:60px}
+.msc-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:var(--accent-gold)}
+
+/* ========== SECTION PARALLAX ========== */
+.parallax-section{position:relative;overflow:hidden}
+.parallax-inner{will-change:transform;transition:transform .1s linear}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">MUNICI<span>·</span>PIUM</a>
+    <ul class="nav-links">
+      <li><a href="#about">O nama</a></li>
+      <li><a href="#menu">Meni</a></li>
+      <li><a href="#events">Proslave</a></li>
+      <li><a href="#gallery">Galerija</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+      <li><span class="nav-hours">Uto–Ned 10–22h</span></li>
+      <li><a href="#contact" class="nav-cta">Rezerviraj stol</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">O nama</a>
+  <a href="#menu">Meni</a>
+  <a href="#events">Proslave</a>
+  <a href="#gallery">Galerija</a>
+  <a href="#contact">Kontakt</a>
+  <a href="#contact" class="mm-cta">Rezerviraj stol</a>
+</div>
+<a href="#contact" class="floating-reserve" id="floatingBtn">Rezerviraj stol</a>
+<a href="https://wa.me/38595910 5656?text=Pozdrav%2C%20zanima%20me%20rezervacija%20stola%20u%20Fine%20Grill%20Municipium." target="_blank" rel="noopener" class="floating-whatsapp" id="floatingWa" aria-label="WhatsApp rezervacija">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="back-to-top" id="backToTop" aria-label="Natrag gore">↑</button>
+
+<!-- GDPR Banner -->
+<div class="gdpr" id="gdprBanner">
+  <p>Ova stranica koristi kolačiće kako bi poboljšala vaše iskustvo. Nastavkom pregleda pristajete na korištenje kolačića u skladu s našom <a href="#">politikom privatnosti</a>.</p>
+  <div class="gdpr-btns">
+    <button class="gdpr-decline" id="gdprDecline">Odbij</button>
+    <button class="gdpr-accept" id="gdprAccept">Prihvati</button>
+  </div>
+</div>
+
+<!-- ========== HERO ========== -->
+<header class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-content">
+    <span class="hero-mark">Fine Grill · Rijeka · Est. 2020</span>
+    <h1>Tradicija <span class="amp">&amp;</span> <em>okusi zavičaja</em></h1>
+    <span class="gold-line"></span>
+    <p class="sub" id="heroSub">Grill na drveni ugljen, autentični okusi Mediterana i nezaboravni trenuci — u samom srcu Rijeke.<span class="typewriter-cursor"></span></p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Rezerviraj stol</a>
+      <a href="#menu" class="btn btn-outline">Pogledaj meni</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll</div>
+</header>
+
+<!-- ========== GOOGLE REVIEWS ========== -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews-head reveal">
+      <div class="google-badge">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8a12 12 0 1 1 0-24c3 0 5.8 1.2 7.9 3.1l5.7-5.7A20 20 0 1 0 44 24c0-1.2-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8A12 12 0 0 1 24 12c3 0 5.8 1.2 7.9 3.1l5.7-5.7A20 20 0 0 0 6.3 14.7z"/><path fill="#4CAF50" d="M24 44a20 20 0 0 0 13.5-5.2l-6.2-5.3A11.9 11.9 0 0 1 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5A20 20 0 0 0 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.2-.1-2.4-.4-3.5z"/></svg>
+        <span class="rating">4,5</span>
+        <span class="rating-stars">★★★★★</span>
+        <span class="rating-meta">Google Reviews · 580+</span>
+      </div>
+      <h2 class="section-title">Što kažu <em>naši gosti</em></h2>
+      <span class="gold-line center"></span>
+    </div>
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Bili smo na obiteljskoj večeri i sve je bilo besprijekorno. Mesna plata Municipium je spektakularna, količina i kvaliteta su iznad svake pohvale. Osoblje ljubazno i pažljivo. Definitivno se vraćamo!"</p>
+        <div class="review-author">
+          <div class="review-avatar">I</div>
+          <div>
+            <div class="review-name">Ivan K.</div>
+            <div class="review-meta">Google · Local Guide</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal delay-1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Odlična lokacija u srcu Rijeke, predivna terasa, a hrana — sve pohvale! Juneći obrazi na kremi od palente su nešto posebno. Vinska karta je impresivna. Toplo preporučujem svima."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sandra M.</div>
+            <div class="review-meta">Google · prije 2 tjedna</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal delay-2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Organizirali smo poslovnu večeru za 15 osoba — restoran je bio savršen domaćin. Fleksibilni su, hrana vrhunska, a atmosfera elegantna bez pretjeranosti. Pravo mjesto za posebne prigode u Rijeci."</p>
+        <div class="review-author">
+          <div class="review-avatar">T</div>
+          <div>
+            <div class="review-name">Tomislav B.</div>
+            <div class="review-meta">Google · prije 1 mjesec</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ZAŠTO MUNICIPIUM ========== -->
+<section class="why">
+  <div class="container">
+    <div class="why-head reveal">
+      <span class="overline center">Zašto Municipium</span>
+      <h2 class="section-title">Iskustvo koje se <em>pamti</em></h2>
+      <p>Svaki detalj — od izbora namirnica do zadnjeg gutljaja vina — pažljivo je promišljen kako biste doživjeli gastronomiju na potpuno drugačiji način.</p>
+    </div>
+    <div class="why-grid">
+      <article class="why-card reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2c1.5 4 5 5 5 9a5 5 0 0 1-10 0c0-4 3.5-5 5-9z"/><path d="M9 13a3 3 0 0 0 6 0"/></svg>
+        </div>
+        <h3>Grill na drveni ugljen</h3>
+        <p>Autentična tehnika koja meso i ribu pretvara u nezaboravne specijalitete s prepoznatljivim dimnim okusom.</p>
+      </article>
+      <article class="why-card reveal delay-1">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12h18M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/><path d="M9 17h6"/></svg>
+        </div>
+        <h3>Lokalne namirnice</h3>
+        <p>Pažljivo birano od provjerenih lokalnih dobavljača — meso, svježa riba s Jadrana i sezonsko povrće.</p>
+      </article>
+      <article class="why-card reveal delay-2">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 2v6a4 4 0 0 0 8 0V2"/><path d="M12 12v10M8 22h8"/></svg>
+        </div>
+        <h3>Vrhunska vinska karta</h3>
+        <p>Pažljivo kurirana selekcija domaćih i istarskih vina koju će vam preporučiti naš iskusni sommelier.</p>
+      </article>
+      <article class="why-card reveal delay-3">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17.5 6.5 21 8 13.5 3 9l6.5-.5z"/></svg>
+        </div>
+        <h3>Besprijekorna usluga</h3>
+        <p>Naš tim svaki gostov posjet pretvara u poseban događaj — diskretno, pažljivo i s pravom dozom topline.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== O NAMA ========== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="overline">O nama</span>
+        <h2 class="section-title">Gdje se <em>tradicija</em> susreće s modernim okusom</h2>
+        <span class="gold-line"></span>
+        <p>Fine Grill Municipium smješten je u samom srcu Rijeke — na jednom od najprepoznatljivijih trgova u gradu. Kuhinja spaja tradiciju primorske gastronomije s modernim grill pristupom: svako jelo pripremamo na drveni ugljen, od pažljivo odabranih lokalnih namirnica i svježe ribe s Jadrana.</p>
+        <p>Bilo da slavite poseban trenutak, ugošćujete partnere ili jednostavno uživate u dobrom obroku uz čašu domaćeg vina — Municipium je vaše mjesto.</p>
+        <div class="stats">
+          <div><div class="stat-num">70+</div><div class="stat-label">Sjedećih mjesta</div></div>
+          <div><div class="stat-num">2020</div><div class="stat-label">Godina otvorenja</div></div>
+          <div><div class="stat-num">4,5★</div><div class="stat-label">Google ocjena</div></div>
+          <div><div class="stat-num">580+</div><div class="stat-label">Recenzija</div></div>
+        </div>
+      </div>
+      <div class="press-cards reveal delay-1">
+        <div class="press-card">
+          <div class="press-source">Novi list</div>
+          <p class="press-quote">"Gastro oaza u koju ćete se vraćati zbog hrane, osoblja i atmosfere. Fine Grill Municipium smješten je u samom srcu Rijeke."</p>
+          <a href="https://www.novilist.hr/life/posjetile-smo-municipium-gastro-oazu-u-koju-cete-se-vracati-zbog-hrane-osoblja-i-atmosfere/" target="_blank" rel="noopener" class="press-link">Čitaj članak →</a>
+        </div>
+        <div class="press-card">
+          <div class="press-source">Extravagant Gastro</div>
+          <p class="press-quote">"Jedno od najčešćih pitanja gostiju koji posjete Rijeku je gdje se najbolje jede. Naš odgovor je restoran Municipium."</p>
+          <a href="https://extravagant.com.hr/gdje-dobro-pojesti-u-centru-rijeke-u-restoranu-municipium/" target="_blank" rel="noopener" class="press-link">Čitaj članak →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SIGNATURE DISHES ========== -->
+<section class="dishes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline center">Naši specijaliteti</span>
+      <h2 class="section-title">Jela koja se <em>pamte</em></h2>
+      <span class="gold-line center"></span>
+      <p>Selekcija najtraženijih jela naše kuhinje — od signature steakova do svježe ribe s Jadrana.</p>
+    </div>
+    <div class="dishes-grid">
+      <article class="dish-card reveal">
+        <div class="dish-img-wrap"><span class="dish-tag">Signature</span><div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80')"></div></div>
+        <div class="dish-body">
+          <h3 class="dish-name">Juneći obrazi na kremi od palente</h3>
+          <p class="dish-desc">Nježno pirjani juneći obrazi na kremastoj palenti — remek-djelo naše kuhinje koje topi u ustima.</p>
+          <div class="dish-foot"><div class="dish-price">22,00 €</div><div class="dish-arrow">→</div></div>
+        </div>
+      </article>
+      <article class="dish-card reveal delay-1">
+        <div class="dish-img-wrap"><span class="dish-tag">Za 4 osobe</span><div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80')"></div></div>
+        <div class="dish-body">
+          <h3 class="dish-name">Mesna plata Municipium</h3>
+          <p class="dish-desc">Vješalice, piletina, rebarca, pljeskavica, čevapčići i roštiljke — za pravu gozbu u društvu.</p>
+          <div class="dish-foot"><div class="dish-price">56,00 €</div><div class="dish-arrow">→</div></div>
+        </div>
+      </article>
+      <article class="dish-card reveal delay-2">
+        <div class="dish-img-wrap"><span class="dish-tag">Za dvoje</span><div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=800&q=80')"></div></div>
+        <div class="dish-body">
+          <h3 class="dish-name">Ribarska plata Municipium</h3>
+          <p class="dish-desc">Svježi morski specijaliteti s roštilja za dvoje — okus Jadrana na vašem tanjuru.</p>
+          <div class="dish-foot"><div class="dish-price">55,80 €</div><div class="dish-arrow">→</div></div>
+        </div>
+      </article>
+      <article class="dish-card reveal">
+        <div class="dish-img-wrap"><span class="dish-tag">Prime</span><div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80')"></div></div>
+        <div class="dish-body">
+          <h3 class="dish-name">Beefsteak (250g)</h3>
+          <p class="dish-desc">Premium govedina s drvenog ugljena, hrskavo izvana, sočno iznutra — klasika u savršenstvu.</p>
+          <div class="dish-foot"><div class="dish-price">33,00 €</div><div class="dish-arrow">→</div></div>
+        </div>
+      </article>
+      <article class="dish-card reveal delay-1">
+        <div class="dish-img-wrap"><span class="dish-tag">Svježe</span><div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=800&q=80')"></div></div>
+        <div class="dish-body">
+          <h3 class="dish-name">Tuna steak</h3>
+          <p class="dish-desc">Svježa tuna s roštilja, mediteranski začini i sezonska salata — okus mora u svom najčišćem obliku.</p>
+          <div class="dish-foot"><div class="dish-price">16,60 €</div><div class="dish-arrow">→</div></div>
+        </div>
+      </article>
+      <article class="dish-card reveal delay-2">
+        <div class="dish-img-wrap"><span class="dish-tag">Classic</span><div class="dish-img" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80')"></div></div>
+        <div class="dish-body">
+          <h3 class="dish-name">Seljački hamburger</h3>
+          <p class="dish-desc">Domaća pljeskavica, svježe pecivo i klasičan okus s karakterom — naša verzija burger klasika.</p>
+          <div class="dish-foot"><div class="dish-price">10,80 €</div><div class="dish-arrow">→</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MENU ========== -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline center">Naša kuhinja</span>
+      <h2 class="section-title">Cjeloviti <em>meni</em></h2>
+      <span class="gold-line center"></span>
+    </div>
+
+    <!-- Horizontal scroll featured items -->
+    <div class="menu-scroll-wrap reveal">
+      <div class="menu-scroll-hint">← Povuci za više →</div>
+      <div class="menu-cards-scroll" id="menuScroll">
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Specijaliteti</div>
+          <div class="msc-name">Juneći obrazi na kremi od palente</div>
+          <div class="msc-desc">Nježno pirjani juneći obrazi na kremastoj palenti — remek-djelo naše kuhinje.</div>
+          <div class="msc-price">22,00 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Steak</div>
+          <div class="msc-name">Tomahawk steak (1kg)</div>
+          <div class="msc-desc">Spektakularni premium odrezak s kostom — za pravi gastronomski doživljaj.</div>
+          <div class="msc-price">59,00 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Ribe</div>
+          <div class="msc-name">Ribarska plata Municipium</div>
+          <div class="msc-desc">Svježi morski specijaliteti s roštilja za dvoje — okus Jadrana na vašem tanjuru.</div>
+          <div class="msc-price">55,80 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Grill</div>
+          <div class="msc-name">Mesna plata Municipium za 4</div>
+          <div class="msc-desc">Vješalice, piletina, rebarca, pljeskavica, čevapčići i roštiljke za pravu gozbu.</div>
+          <div class="msc-price">56,00 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Specijaliteti</div>
+          <div class="msc-name">Bushido sushi plata</div>
+          <div class="msc-desc">Crispy Kani Roll, Volcano Roll, Chicken Teriyaki, Manila Roll, Hosomaki i još mnogo.</div>
+          <div class="msc-price">55,00 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Steak</div>
+          <div class="msc-name">Beefsteak (250g)</div>
+          <div class="msc-desc">Premium govedina s drvenog ugljena — hrskavo izvana, sočno iznutra.</div>
+          <div class="msc-price">33,00 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Ribe</div>
+          <div class="msc-name">Tuna tagliata</div>
+          <div class="msc-desc">Svježa tuna tanko rezana, maslinovo ulje, kapar i mediteranski začini.</div>
+          <div class="msc-price">19,95 €</div>
+        </div>
+        <div class="menu-scroll-card">
+          <div class="msc-cat">Pašte</div>
+          <div class="msc-name">Domaći njoki s beefsteakom i tartufatom</div>
+          <div class="msc-desc">Ručno rađeni njoki s trakicama beefsteaka i aromatičnim tartufatom.</div>
+          <div class="msc-price">12,90 €</div>
+        </div>
+      </div>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="t1">Specijaliteti</button>
+      <button class="tab-btn" data-tab="t2">Predjela</button>
+      <button class="tab-btn" data-tab="t3">Juhe & Salate</button>
+      <button class="tab-btn" data-tab="t35">Pašte i rižoti</button>
+      <button class="tab-btn" data-tab="t4">Ribe</button>
+      <button class="tab-btn" data-tab="t5">Grill</button>
+      <button class="tab-btn" data-tab="t6">Steak</button>
+      <button class="tab-btn" data-tab="t65">Prilozi</button>
+      <button class="tab-btn" data-tab="t7">Deserti</button>
+      <button class="tab-btn" data-tab="t8">Vinska karta</button>
+    </div>
+
+    <div class="tab-panel active shown" id="t1">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Juneći obrazi na kremi od palente</div></div><div class="mi-price">22,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Gulaš od divljači s domaćom tjesteninom</div></div><div class="mi-price">19,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Seljački hamburger</div></div><div class="mi-price">10,80 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bushido sushi plata (po narudžbi)</div><div class="mi-desc">Crispy Kani Roll, Volcano Roll, Chicken Teriyaki Roll, Manila Roll, Hosomaki, hobotnica salata, bruschette</div></div><div class="mi-price">55,00 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t2">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mesna pašteta</div></div><div class="mi-price">6,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Domaći istarski pršut (100g)</div></div><div class="mi-price">11,95 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sir (100g)</div></div><div class="mi-price">10,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Spring rolls</div></div><div class="mi-price">5,90 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Hobotnica na salatu (100g)</div></div><div class="mi-price">10,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carpaccio od inćuna</div></div><div class="mi-price">11,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Carpaccio od tune</div></div><div class="mi-price">12,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Hladna riblja plata za 2 osobe</div></div><div class="mi-price">22,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Hladna mesna plata za 2 osobe</div></div><div class="mi-price">22,00 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t3">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dnevna juha</div></div><div class="mi-price">4,20 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Riblja juha</div></div><div class="mi-price">6,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Sezonska salata</div></div><div class="mi-price">3,60 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Coleslaw salata</div></div><div class="mi-price">5,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pileća cezar salata</div></div><div class="mi-price">10,50 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t35">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Domaći njoki s beefsteakom i tartufatom</div></div><div class="mi-price">12,90 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Rižoto à la chef</div></div><div class="mi-price">15,75 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pašta à la chef</div></div><div class="mi-price">15,75 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t4">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Lignje frigane</div></div><div class="mi-price">11,80 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Lignje na žaru</div></div><div class="mi-price">12,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">File brancina</div></div><div class="mi-price">13,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tuna steak</div></div><div class="mi-price">16,60 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tuna tagliata</div></div><div class="mi-price">19,95 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Ribarska plata Municipium za 2 osobe</div></div><div class="mi-price">55,80 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dagnje na buzaru (500g)</div></div><div class="mi-price">9,30 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t5">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Čevapčići</div></div><div class="mi-price">8,60 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pljeskavica gurmanska</div><div class="mi-desc">Punjena sirom, pancetom i paprikom</div></div><div class="mi-price">12,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Punjena vješalica</div><div class="mi-desc">Svinjski kare u maramici i panceti, punjen sirom i dimljenom pancetom</div></div><div class="mi-price">13,90 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mesna plata Happy Hour za 2</div><div class="mi-desc">Roštiljka, pljeskavica, čevapčići, piletina, prilog</div></div><div class="mi-price">19,90 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mesna plata Royal za 2</div><div class="mi-desc">Vješalica, ražnjić, piletina, čevapčići, roštiljka, prilog</div></div><div class="mi-price">35,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Mesna plata Municipium za 4</div><div class="mi-desc">Vješalice, piletina, rebarca, gurmanska pljeskavica, čevapčići, roštiljke, ražnjić, prilog</div></div><div class="mi-price">56,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">BBQ rebarca s pekarskim krumpirom</div></div><div class="mi-price">15,95 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t6">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Beefsteak (250g)</div></div><div class="mi-price">33,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Beefsteak tagliata</div></div><div class="mi-price">31,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Rumpsteak</div></div><div class="mi-price">21,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Rumpsteak tagliata</div><div class="mi-desc">Rucola, grana padano, aceto balsamico</div></div><div class="mi-price">19,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Tomahawk steak (1kg)</div></div><div class="mi-price">59,00 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t65">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pomes</div></div><div class="mi-price">3,30 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Pečeni krumpir</div></div><div class="mi-price">3,30 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Kuhani krumpir</div></div><div class="mi-price">3,30 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Blitva i krumpir</div></div><div class="mi-price">4,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Povrće</div></div><div class="mi-price">4,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Vege tanjur</div></div><div class="mi-price">11,70 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Majoneza, ketchup, ajvar, tartar</div></div><div class="mi-price">0,95 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Kajmak</div></div><div class="mi-price">2,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Grana Padano</div></div><div class="mi-price">2,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Kruh, lepinja</div></div><div class="mi-price">1,50 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t7">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Štrudla od jabuka i oraha</div></div><div class="mi-price">4,50 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Dnevni desert</div></div><div class="mi-price">5,50 €</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t8">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Prosecco E. Dry, pjenušac (0,75l)</div></div><div class="mi-price">24,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Prosecco, pjenušac (0,10l)</div></div><div class="mi-price">3,20 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Rossi, Malvazija bijelo (0,75l)</div></div><div class="mi-price">24,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Prelac, Malvazija Šinjora bijelo (0,75l)</div></div><div class="mi-price">32,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Degrassi, Chardonnay bijelo (0,75l)</div></div><div class="mi-price">24,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bartolović, Graševina bijelo (0,75l)</div></div><div class="mi-price">24,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Težak, Pošip bijelo (0,75l)</div></div><div class="mi-price">33,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bačac, Roze (0,75l)</div></div><div class="mi-price">28,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Deklić, Roze (0,75l)</div></div><div class="mi-price">28,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Vrbanek, Roze (0,10l)</div></div><div class="mi-price">3,20 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Saint Hills, Black, Plavac mali crveno (0,75l)</div></div><div class="mi-price">36,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Korlat, Syrah crveno (0,75l)</div></div><div class="mi-price">30,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Vivoda, Merlot crveno (0,75l)</div></div><div class="mi-price">24,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Bartolović, Merlot crveno (0,75l)</div></div><div class="mi-price">24,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Prelac, Refošk crveno (0,75l)</div></div><div class="mi-price">27,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Prelac, Cabernet Sauvignon crveno (0,75l)</div></div><div class="mi-price">27,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Prodan, Muškat desertno vino (0,75l)</div></div><div class="mi-price">25,00 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Vrbanek, Muškat desertno vino (0,10l)</div></div><div class="mi-price">3,20 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Malvazija, Istra, vino kuće bijelo (1l)</div></div><div class="mi-price">17,90 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Graševina, Vrbanek, vino kuće bijelo (1l)</div></div><div class="mi-price">17,90 €</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cabernet Sauvignon Cuvee, vino kuće crveno (1l)</div></div><div class="mi-price">17,90 €</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EVENTS ========== -->
+<section class="events" id="events">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline center">Posebne prigode</span>
+      <h2 class="section-title">Proslave i poslovni eventi u <em>srcu Rijeke</em></h2>
+      <span class="gold-line center"></span>
+      <p>Prepustite nam organizaciju vašeg posebnog trenutka — od intimnih obiteljskih večera do velikih korporativnih događanja.</p>
+    </div>
+    <div class="events-grid">
+      <div class="event-card reveal">
+        <div class="event-num">01</div>
+        <h3>Idealna lokacija</h3>
+        <div class="event-line"></div>
+        <p>Smješteni u samom srcu Rijeke, na Trgu 128. brigade Hrvatske vojske. Lako dostupni, nezaboravni — savršena pozornica za vaš poseban događaj.</p>
+      </div>
+      <div class="event-card reveal delay-1">
+        <div class="event-num">02</div>
+        <h3>Fleksibilan kapacitet</h3>
+        <div class="event-line"></div>
+        <p>Unutrašnji kapacitet od 70 sjedećih mjesta. Restoran možete iznajmiti u potpunosti ili djelomično — za rođendane, obiteljske proslave i poslovne večere.</p>
+      </div>
+      <div class="event-card reveal delay-2">
+        <div class="event-num">03</div>
+        <h3>Sve na jednom mjestu</h3>
+        <div class="event-line"></div>
+        <p>Profesionalno fotografiranje vaše proslave. Raznovrsni riblji i mesni meniji kreirani prema vašim željama, ukusima i budžetu.</p>
+      </div>
+    </div>
+    <div class="events-cta reveal">
+      <h3>Planirate <em style="font-style:italic;color:var(--accent-gold-light)">poseban</em> trenutak?</h3>
+      <p>Kontaktirajte nas za personaliziranu ponudu i rezervaciju prostora.</p>
+      <a href="#contact" class="btn btn-primary">Pošalji upit za proslavu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="overline center">Atmosfera</span>
+      <h2 class="section-title">Iz našeg <em>restorana</em></h2>
+      <span class="gold-line center"></span>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item tall" data-i="0"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-prva-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="1"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-druga-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="2"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-treca-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item wide" data-i="3"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-cetvrta-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="4"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-peta-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="5"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-sesta-foto.png" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item tall" data-i="6"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-sedma-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="7"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-osma-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="8"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-deveta-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="9"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-deseta-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="10"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-jedanaesta-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+      <div class="gallery-item" data-i="11"><img loading="lazy" src="https://finegrillmunicipium.com/assets/img/galerija-dvanaesta-foto.jpg" alt=""><div class="gallery-zoom">⤢</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-btn lb-close" id="lbClose">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext">›</button>
+</div>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:left">
+      <span class="overline">Rezervacije</span>
+      <h2 class="section-title">Posjetite <em>nas</em></h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-block">
+          <div class="info-label">Lokacija</div>
+          <p>Trg 128. brigade Hrvatske vojske<br>51000 Rijeka, Hrvatska</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Radno vrijeme</div>
+          <p>Utorak — Nedjelja: 10:00 — 22:00<br>Ponedjeljak: zatvoreno</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Kontakt</div>
+          <p><a href="tel:+38551212677" style="color:inherit">+385 51 212 677</a><br><a href="tel:+38595910 5656" style="color:inherit">+385 95 910 5656</a><br><a href="mailto:municipiumrezervacije@gmail.com" style="color:inherit">municipiumrezervacije@gmail.com</a></p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Pratite nas</div>
+          <div class="socials">
+            <a href="https://www.facebook.com/people/Grill-Municipium/100086056297352/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/finegrillmunicipium/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tripadvisor.com/Restaurant_Review-g297516-d710912-Reviews-Municipium-Rijeka_Primorje_Gorski_Kotar_County.html" target="_blank" rel="noopener">TripAdvisor</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal delay-1">
+        <form id="reservationForm">
+          <input type="text" name="name" placeholder="Ime i prezime" required>
+          <input type="email" name="email" placeholder="Email adresa" required>
+          <div class="form-row">
+            <select name="guests" required>
+              <option value="">Broj gostiju</option>
+              <option>1-2</option><option>3-4</option><option>5-8</option>
+              <option>9-15</option><option>16+</option>
+            </select>
+            <input type="date" name="date" required>
+          </div>
+          <textarea name="message" placeholder="Poruka / posebni zahtjevi" rows="4"></textarea>
+          <button type="submit" class="submit-btn">Pošalji rezervaciju</button>
+        </form>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11220.202512247824!2d14.4416404!3d45.3276001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4764a13ed2daad79%3A0x908da7fc6a7d3ac1!2sMunicipium!5e0!3m2!1sbs!2sba!4v1679588397185!5m2!1sbs!2sba" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="filter:grayscale(100%) contrast(90%) brightness(75%);transition:filter .8s ease" onmouseover="this.style.filter='grayscale(0%) contrast(100%) brightness(100%)'" onmouseout="this.style.filter='grayscale(100%) contrast(90%) brightness(75%)'"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">MUNICIPIUM</div>
+        <p class="footer-tagline">Tradicija i okusi zavičaja.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigacija</h4>
+        <ul>
+          <li><a href="#hero">Početna</a></li>
+          <li><a href="#about">O nama</a></li>
+          <li><a href="#menu">Meni</a></li>
+          <li><a href="#events">Proslave</a></li>
+          <li><a href="#gallery">Galerija</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <p>Trg 128. brigade Hrvatske vojske<br>51000 Rijeka<br>Uto — Ned: 10:00 — 22:00<br>+385 51 212 677<br>municipiumrezervacije@gmail.com</p>
+        <div class="socials" style="margin-top:1.4rem">
+          <a href="https://www.facebook.com/people/Grill-Municipium/100086056297352/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/finegrillmunicipium/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-sep"></div>
+    <p class="copy">© <span id="yr"></span> Fine Grill Municipium. Sva prava pridržana. · <span style="color:var(--accent-gold);opacity:.6">Trg 128. brigade HV, Rijeka</span></p>
+  </div>
+</footer>
+
+<script>
+/* ========== NAVBAR scroll behavior ========== */
+const navbar=document.getElementById('navbar');
+let lastY=0;
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  navbar.classList.toggle('scrolled',y>40);
+  if(y>250&&y>lastY+5) navbar.classList.add('hidden');
+  else if(y<lastY-5) navbar.classList.remove('hidden');
+  lastY=y;
+},{passive:true});
+
+/* ========== Floating button show/hide ========== */
+const floatingBtn=document.getElementById('floatingBtn');
+window.addEventListener('scroll',()=>{
+  floatingBtn.classList.toggle('visible',window.scrollY>600);
+},{passive:true});
+
+/* ========== Hero parallax ========== */
+const heroBg=document.getElementById('heroBg');
+const isReducedMotion=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(heroBg && !isReducedMotion){
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    if(y<window.innerHeight){
+      heroBg.style.transform=`translateY(${y*0.4}px)`;
+    }
+  },{passive:true});
+}
+
+/* ========== Mobile menu ========== */
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow='';
+}));
+
+/* ========== Tabs ========== */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const target=btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(p=>{
+      p.classList.remove('shown');
+      setTimeout(()=>p.classList.remove('active'),250);
+    });
+    const panel=document.getElementById(target);
+    setTimeout(()=>{
+      panel.classList.add('active');
+      requestAnimationFrame(()=>panel.classList.add('shown'));
+    },260);
+  });
+});
+
+/* ========== Reveal on scroll ========== */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
+  });
+},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal, .gallery-item').forEach(el=>io.observe(el));
+
+/* ========== Lightbox ========== */
+const images=[...document.querySelectorAll('.gallery-item img')].map(img=>img.src);
+const lb=document.getElementById('lightbox');
+const lbImg=document.getElementById('lbImg');
+let lbIdx=0;
+function openLb(i){lbIdx=i;lbImg.src=images[i];lb.classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+function nav(d){lbIdx=(lbIdx+d+images.length)%images.length;lbImg.src=images[lbIdx]}
+document.querySelectorAll('.gallery-item').forEach(item=>{
+  item.addEventListener('click',()=>openLb(+item.dataset.i));
+});
+document.getElementById('lbClose').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();nav(-1)});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();nav(1)});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')nav(-1);
+  if(e.key==='ArrowRight')nav(1);
+});
+
+/* Touch swipe on lightbox */
+let touchX=null;
+lb.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(touchX===null)return;
+  const dx=e.changedTouches[0].clientX-touchX;
+  if(Math.abs(dx)>50)nav(dx<0?1:-1);
+  touchX=null;
+},{passive:true});
+
+/* ========== Dynamic year ========== */
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ========== WhatsApp + Back to top show/hide ========== */
+const floatingWa=document.getElementById('floatingWa');
+const backToTop=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{
+  const show=window.scrollY>600;
+  floatingWa.classList.toggle('visible',show);
+  backToTop.classList.toggle('visible',window.scrollY>400);
+},{passive:true});
+backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ========== Active nav on scroll ========== */
+const sections=document.querySelectorAll('section[id], header[id]');
+const navLinks=document.querySelectorAll('.nav-links a:not(.nav-cta):not(.nav-hours)');
+const navObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove('nav-active'));
+      const active=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(active)active.classList.add('nav-active');
+    }
+  });
+},{threshold:.3,rootMargin:'-80px 0px -60% 0px'});
+sections.forEach(s=>navObserver.observe(s));
+
+/* ========== Counter animation ========== */
+function animateCounter(el,target,suffix,duration=1800){
+  const isFloat=target%1!==0;
+  const start=performance.now();
+  const update=(now)=>{
+    const progress=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    const current=isFloat?(target*ease).toFixed(1):(Math.round(target*ease));
+    el.textContent=current+suffix;
+    if(progress<1)requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+const counterObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const nums=e.target.querySelectorAll('.stat-num');
+      nums.forEach(n=>{
+        const text=n.textContent;
+        if(text.includes('70'))animateCounter(n,70,'+');
+        else if(text.includes('2020'))animateCounter(n,2020,'');
+        else if(text.includes('4'))animateCounter(n,4.5,'★');
+        else if(text.includes('580'))animateCounter(n,580,'+');
+      });
+      counterObserver.unobserve(e.target);
+    }
+  });
+},{threshold:.4});
+const statsEl=document.querySelector('.stats');
+if(statsEl)counterObserver.observe(statsEl);
+
+/* ========== GDPR ========== */
+const gdpr=document.getElementById('gdprBanner');
+if(!localStorage.getItem('gdpr-choice')){
+  setTimeout(()=>gdpr.classList.add('show'),1500);
+}
+document.getElementById('gdprAccept').addEventListener('click',()=>{
+  localStorage.setItem('gdpr-choice','accepted');
+  gdpr.classList.remove('show');
+});
+document.getElementById('gdprDecline').addEventListener('click',()=>{
+  localStorage.setItem('gdpr-choice','declined');
+  gdpr.classList.remove('show');
+});
+
+/* ========== Form ========== */
+document.getElementById('reservationForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=this.name.value;
+  const email=this.email.value;
+  const guests=this.guests.value;
+  const date=this.date.value;
+  const message=this.message.value;
+  const subject=encodeURIComponent('Rezervacija stola — '+name);
+  const body=encodeURIComponent(
+    'Ime: '+name+'\n'+
+    'Email: '+email+'\n'+
+    'Broj gostiju: '+guests+'\n'+
+    'Datum: '+date+'\n'+
+    'Poruka: '+message
+  );
+  window.location.href='mailto:municipiumrezervacije@gmail.com?subject='+subject+'&body='+body;
+  setTimeout(()=>{
+    const btn=this.querySelector('.submit-btn');
+    const orig=btn.textContent;
+    btn.textContent='✓ Hvala! Provjerite email klijent.';
+    btn.style.background='#4a7c59';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';},5000);
+  },300);
+});
+
+/* ========== 1. TYPEWRITER ========== */
+(function(){
+  const phrases=[
+    'Grill na drveni ugljen, autentični okusi Mediterana i nezaboravni trenuci — u samom srcu Rijeke.',
+    'Tradicija okusa. Moderna elegancija. Savršena lokacija u srcu Rijeke.',
+    'Svježa riba, premium meso, domaća vina — sve na jednom mjestu.'
+  ];
+  const el=document.getElementById('heroSub');
+  if(!el)return;
+  const cursor=el.querySelector('.typewriter-cursor');
+  let pi=0,ci=0,deleting=false,paused=false;
+  function type(){
+    if(paused)return;
+    const phrase=phrases[pi];
+    if(!deleting){
+      const text=phrase.slice(0,ci+1);
+      el.firstChild.textContent=text;
+      ci++;
+      if(ci===phrase.length){paused=true;setTimeout(()=>{paused=false;deleting=true;setTimeout(type,40)},2800);return;}
+    } else {
+      const text=phrase.slice(0,ci-1);
+      el.firstChild.textContent=text;
+      ci--;
+      if(ci===0){deleting=false;pi=(pi+1)%phrases.length;}
+    }
+    setTimeout(type,deleting?28:42);
+  }
+  // Wait for hero animation then start typewriter
+  setTimeout(()=>{
+    el.insertBefore(document.createTextNode(''),cursor);
+    ci=phrases[0].length;
+    el.firstChild.textContent=phrases[0];
+    setTimeout(()=>{paused=false;deleting=true;setTimeout(type,40)},3000);
+  },2200);
+})();
+
+/* ========== 2. STAGGER ANIMACIJE ========== */
+(function(){
+  const groups=[
+    {selector:'.dish-card',delay:120},
+    {selector:'.why-card',delay:100},
+    {selector:'.review-card',delay:110},
+    {selector:'.event-card',delay:120},
+  ];
+  groups.forEach(({selector,delay})=>{
+    const els=document.querySelectorAll(selector);
+    if(!els.length)return;
+    const obs=new IntersectionObserver((entries)=>{
+      let visible=[];
+      entries.forEach(e=>{if(e.isIntersecting)visible.push(e.target)});
+      visible.forEach((el,i)=>{
+        setTimeout(()=>el.classList.add('stagger-in'),i*delay);
+        obs.unobserve(el);
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(el=>obs.observe(el));
+  });
+})();
+
+/* ========== 3. MAGNETIC BUTTONS ========== */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches)return; // skip on touch
+  document.querySelectorAll('.btn,.nav-cta,.submit-btn,.floating-reserve').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      const cx=r.left+r.width/2;
+      const cy=r.top+r.height/2;
+      const dx=(e.clientX-cx)*.28;
+      const dy=(e.clientY-cy)*.28;
+      btn.style.transform=`translate(${dx}px,${dy}px)`;
+    });
+    btn.addEventListener('mouseleave',()=>{
+      btn.style.transform='';
+    });
+  });
+})();
+
+/* ========== 4. HORIZONTAL SCROLL DRAG ========== */
+(function(){
+  const slider=document.getElementById('menuScroll');
+  if(!slider)return;
+  let isDown=false,startX,scrollLeft;
+  slider.addEventListener('mousedown',e=>{
+    isDown=true;slider.style.cursor='grabbing';
+    startX=e.pageX-slider.offsetLeft;
+    scrollLeft=slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave',()=>{isDown=false;slider.style.cursor='grab'});
+  slider.addEventListener('mouseup',()=>{isDown=false;slider.style.cursor='grab'});
+  slider.addEventListener('mousemove',e=>{
+    if(!isDown)return;
+    e.preventDefault();
+    const x=e.pageX-slider.offsetLeft;
+    const walk=(x-startX)*1.4;
+    slider.scrollLeft=scrollLeft-walk;
+  });
+})();
+
+/* ========== 5. PARALLAX NA SEKCIJAMA ========== */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const sections=document.querySelectorAll('.why,.reviews,.events');
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    sections.forEach(sec=>{
+      const rect=sec.getBoundingClientRect();
+      if(rect.bottom<0||rect.top>window.innerHeight)return;
+      const progress=(window.innerHeight-rect.top)/(window.innerHeight+rect.height);
+      const shift=(progress-.5)*40;
+      const inner=sec.querySelector('.container');
+      if(inner)inner.style.transform=`translateY(${shift}px)`;
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
